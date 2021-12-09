@@ -1,10 +1,20 @@
-const Book = require("./bookModels");
+const { Book, User, Author, Genre } = require("./bookModels");
 
-exports.addBook = async (movieObj) => {
+exports.addUser = async (userObj) => {
+    try {
+        await User.sync();
+        await User.create(userObj);
+        return `Successfully added ${userObj.firstName} as a user`;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+exports.addBook = async (bookObj) => {
     try {
         // creates the table if it doesnt already exist:
-        await Book.sync(); 
-        await Book.create(movieObj)
+        await Book.sync();
+        await Book.create(bookObj)
         return `Successfully created ${bookObj.title}`
     } catch (error) {
         console.log(error)
@@ -17,5 +27,6 @@ exports.listBooks = async () => {
     } catch (error) {
         console.log(error)
     }
-
 }
+
+
