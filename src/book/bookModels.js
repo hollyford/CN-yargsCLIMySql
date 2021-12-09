@@ -1,26 +1,8 @@
 const sequelize = require("../db/connection");
+const { User } = require("../user/userModels")
 const { DataTypes } = require("sequelize");
 // the last one lets you add the datatypes to the table
 
-const User = sequelize.define("User", {
-    userId: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
-    },
-    firstName: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    lastName: {
-        type: DataTypes.STRING,
-        allowNull: true,
-    },
-
-},
-    {
-        tableName: "Users"
-    });
 
 const Author = sequelize.define("Author", {
     authorId: {
@@ -117,4 +99,4 @@ const Book = sequelize.define("Book", {
 
 
 
-module.exports = { Book, User, Author, Genre };
+module.exports = { Book, Author, Genre };
