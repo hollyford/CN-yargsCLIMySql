@@ -18,4 +18,3 @@ exports.listUsers = async () => {
         console.log(error)
     }
 }
-
