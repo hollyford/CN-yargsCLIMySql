@@ -1,6 +1,6 @@
 const sequelize = require("../db/connection");
-const { User } = require("../user/userModels")
 const { DataTypes } = require("sequelize");
+const { User } = require("../user/userModels")
 
 const Author = sequelize.define("Author", {
     authorId: {

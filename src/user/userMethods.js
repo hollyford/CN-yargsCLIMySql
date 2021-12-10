@@ -4,7 +4,7 @@ exports.addUser = async (userObj) => {
     try {
         await User.sync();
         await User.create(userObj);
-        return `Successfully added ${userObj.firstName} as a user`;
+        console.log(`Successfully added ${userObj.firstName} as a user`);
     } catch (error) {
         console.log(error);
     }

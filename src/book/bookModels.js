@@ -1,7 +1,7 @@
 const sequelize = require("../db/connection");
 const { User } = require("../user/userModels")
-const { Genre } = require("../genreModels")
-const { Author } = require("../authorModels")
+const { Genre } = require("../genre/genreModels")
+const { Author } = require("../author/authorModels")
 const { DataTypes } = require("sequelize");
 // the last one lets you add the datatypes to the table
 

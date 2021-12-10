@@ -4,7 +4,7 @@ exports.addAuthor = async (authorObj) => {
     try {
         await Author.sync();
         await Author.create(authorObj);
-        return `Successfully added ${authorObj.firstName} ${authorObj.lastName} as to the author list`;
+        console.log(`Successfully added ${authorObj.firstName} ${authorObj.lastName} as to the author list`);
     } catch (error) {
         console.log(error);
     }

@@ -6,7 +6,7 @@ exports.addBook = async (bookObj) => {
         // creates the table if it doesnt already exist:
         await Book.sync();
         await Book.create(bookObj)
-        return `Successfully created ${bookObj.title}`
+        console.log(`Successfully created ${bookObj.title}`)
     } catch (error) {
         console.log(error)
     }
