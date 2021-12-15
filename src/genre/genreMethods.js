@@ -20,22 +20,23 @@ exports.listGenres = async () => {
     }
 }
 
-exports.editGenres = async (genreId, genreObj) => {
+
+exports.editGenre = async (genrePKID, genreObj) => {
     try {
-        await Genre.findByPk(genreId)
-        await Genre.update(genreObj)
+        await Genre.update({ genre: genreObj }, { where: { genreId: genrePKID}})
+
     } catch (error) {
         console.log(error) 
     }
 }
 
-exports.deleteGenre = async (genreObj) => {
-    Genre.destroy({
-        where: {
-            {genreObj} === {Genre.genreId}        }
-    })
+exports.deleteGenre = async (genrePKID) => {
+    try {
+        await Genre.destroy({ where: { genreId: genrePKID}})
+    } catch (error) {
+        console.log(error) 
+    }
 }
-
 
 // Used this to populate the table in the database:
 exports.bulkAddGenres = async () => {
