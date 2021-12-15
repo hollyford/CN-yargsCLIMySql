@@ -9,12 +9,3 @@ exports.addAuthor = async (authorObj) => {
         console.log(error);
     }
 };
-
-exports.listAuthors = async () => {
-    try {
-        const all = await Author.findAll({})
-        all.forEach(item => {console.log(`${item.authorId} ${item.firstName} ${item.lastName}`)});
-    } catch (error) {
-        console.log(error)
-    }
-}
